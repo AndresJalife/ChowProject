@@ -1,0 +1,40 @@
+Supuestos:
+	- Fuerza:
+		- Rango: 50-70 (int)
+
+	- VelocidadDeAtaque
+		- Rango: 1-10 (int)
+
+	- VelocidadDeMovimiento
+		- Rango: 1-10 (int)
+
+	- Vida:
+		- Rango: 0 - 11000 (double)
+
+	- escudo: 50%
+		- (se podría ir desgastando a medida que recibe daño)
+
+	- potencia: 
+		- Rango: 1-2 (de a 0.1)
+
+metodo de golpe uppercat:
+	fuerza * vida * 0.0015
+
+metodo de golpe jab:
+	fuerza * vida * 0.0018
+
+
+SuperAtaques:
+	todos tienen un superAtaque y cada X golpes pueden dar un superAtaque. Dependiendo del superataque multiplica hasta x2 un ataque uppercat o jab.
+
+	Cada personaje se elije 2 superataques al comenzar la partida.
+
+	el boton para usarlo aparece cuando te quedan 0 golpes restantes para pegar;
+
+	tipos de superataque:
+		1) SuperAtaqueBot
+			- cada 6 golpes
+			- potencia 1.5
+
+
+pensar como tiene que ser la posicion
