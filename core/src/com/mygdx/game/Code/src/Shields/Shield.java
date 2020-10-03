@@ -1,4 +1,4 @@
-package Escudo;
+package Shields;
 
 public abstract class Shield {
     protected boolean state;

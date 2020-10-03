@@ -1,4 +1,4 @@
-package Ataques;
+package Attacks;
 
 public class SuperAttackBot extends SuperAttack {
     public SuperAttackBot(){

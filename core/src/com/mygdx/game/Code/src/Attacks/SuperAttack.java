@@ -1,4 +1,4 @@
-package Ataques;
+package Attacks;
 
 public abstract class SuperAttack {
     protected double power;

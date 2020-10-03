@@ -1,7 +1,7 @@
-package Personaje;
+package Characters;
 
-import Ataques.SuperAttack;
-import Escudo.Shield;
+import Attacks.SuperAttack;
+import Shields.Shield;
 
 import java.util.ArrayList;
 
@@ -28,6 +28,9 @@ public abstract class Character {
     }
     public ArrayList<SuperAttack> getSuperAttacks(){
         return this.superAttacks;
+    }
+    public boolean itsAlive(){
+        return this.life > 0;
     }
 
     public boolean inRange(int xposEnemy, int yposEnemy){

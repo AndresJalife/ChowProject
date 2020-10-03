@@ -1,6 +1,6 @@
-package Personaje;
+package Characters;
 
-import Ataques.SuperAttack;
+import Attacks.SuperAttack;
 
 public class John extends Character {
     public John(SuperAttack super1, SuperAttack super2){

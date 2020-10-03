@@ -1,7 +1,7 @@
-package Personaje;
+package Characters;
 
-import Ataques.SuperAttack;
-import Escudo.BasicShield;
+import Attacks.SuperAttack;
+import Shields.BasicShield;
 
 public class Andy extends Character {
 
