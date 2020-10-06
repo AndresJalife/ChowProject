@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="left-up" width="60" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="2" nextobjectid="1">
+<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="left-up" width="60" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="7">
  <tileset firstgid="1" source="Diagrama General.tsx"/>
  <layer id="1" name="Tile Layer 1" width="60" height="20">
   <data encoding="base64" compression="zlib">
-   eJztlkEKwDAIBP1O/v/BHoKQQ1M1LUVGB3J33IUo0jT1GMajYTkR/SMeFO9ohgRnxdthWs8VrzeNp9ypWa9U+sd2eHZA3AnNx+KvDDN15Ys5rHs3i6tycrtldfGym53id0ekiyTvt/QuJhc69g5r
+   eJztlcENACAIxFjH/Rf0YfgKPK1t0gGaIyFC5D9WIY2qidg/6aB0TzckNCfdG6bdedLtpnHb/ZWtq3+kqqqqqscNripklQ==
   </data>
  </layer>
+ <objectgroup id="2" name="FLOOR">
+  <object id="1" x="32" y="384" width="1728" height="256"/>
+  <object id="2" x="320" y="320" width="1440" height="64"/>
+  <object id="3" x="1127.27" y="727.273" height="3.0303"/>
+  <object id="4" x="678.788" y="448.485" width="148.485" height="84.8485"/>
+  <object id="5" x="848.485" y="245.455" width="12.1212"/>
+  <object id="6" x="1312.12" y="957.576"/>
+ </objectgroup>
 </map>
