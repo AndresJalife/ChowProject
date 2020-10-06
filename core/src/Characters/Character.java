@@ -32,13 +32,18 @@ public abstract class Character {
     public boolean itsAlive(){
         return this.life > 0;
     }
-
+    ///////////////Position//////////////////////
     public boolean inRange(int xposEnemy, int yposEnemy){
         if (1 + 1 == 2){
             return true;
         }
         return false;
         ///////REFACTOR////////////
+    }
+    public void setPosition(int x, int y, int dir){
+        this.xpos = x;
+        this.xdir = dir;
+        this.ypos = y;
     }
 
     ///////////////////////////Ataques Normales ////////////////////////////////

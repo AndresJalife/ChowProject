@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.4" tiledversion="1.4.2" orientation="orthogonal" renderorder="left-up" width="30" height="13" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="12">
+ <tileset firstgid="1" source="TryMap2/fightMap.tsx"/>
+ <layer id="1" name="Background" width="30" height="13">
+  <data encoding="base64" compression="zlib">
+   eJyzYmBgsBrFo3gUj+JRPIqhGAD+41hd
+  </data>
+ </layer>
+ <layer id="4" name="graphics" width="30" height="13">
+  <data encoding="base64" compression="zlib">
+   eJxjYBgFo2AUDFXwlRGCdRhpZ4cB0OzPaPgbEH+nk71fkOxrY4JgWtv7FQ3LMUFwJBKb2hib2b4DhAFIYx78
+  </data>
+ </layer>
+ <objectgroup id="5" name="ground">
+  <object id="9" x="2.66667" y="176.667" width="476" height="31.3333"/>
+  <object id="10" x="400" y="128.667" width="79.3333" height="47.3333"/>
+  <object id="11" x="1.33333" y="129.333" width="47.3333" height="48"/>
+ </objectgroup>
+</map>
