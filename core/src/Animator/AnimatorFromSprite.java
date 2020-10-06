@@ -8,8 +8,8 @@ public class AnimatorFromSprite {
     public AnimatorFromSprite(){
         Array<TextureRegion> frames = new Array<TextureRegion>();
         for(int i = 1; i < 4; i++){
-            frames.add(new TextureRegion(getTexture(), 64 * i, 100 * i, );
-            frames.add()
+//            frames.add(new TextureRegion(getTexture(), 64 * i, 100 * i, );
+//            frames.add();
         }
     }
 
