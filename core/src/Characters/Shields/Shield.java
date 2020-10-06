@@ -1,4 +1,4 @@
-package Shields;
+package Characters.Shields;
 
 public abstract class Shield {
     protected boolean state;

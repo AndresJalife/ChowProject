@@ -1,4 +1,4 @@
-package Attacks;
+package Characters.Attacks;
 
 public abstract class SuperAttack {
     protected double power;

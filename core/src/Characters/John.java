@@ -1,23 +1,15 @@
 package Characters;
 
-import Attacks.SuperAttack;
+import Characters.Attacks.SuperAttack;
+import com.badlogic.gdx.physics.box2d.World;
 
 public class John extends Character {
-    public John(SuperAttack super1, SuperAttack super2){
-        super(super1, super2);
+    public John(World world, SuperAttack super1, SuperAttack super2, int inicialX, int inicialY){
+        super(world, super1, super2, inicialX, inicialY);
         this.movementSpeed = 8;
         this.strenght = 58;
         this.life = 7500;
 
-    }
-
-    @Override
-    public void upperCat(Character enemigo) {
-        enemigo.hurt(this.life * this.strenght * 0.0015);
-    }
-
-    @Override
-    public void jabPunch(Character enemigo) {
-        enemigo.hurt(this.life * this.strenght * 0.0018);
+        this.name = "JuanTroll";
     }
 }
