@@ -1,11 +1,9 @@
 package Animator;
 
-import Characters.Andy;
 import Characters.Character;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.utils.Array;
 
-//64 de ancho, 100 de alto.
 public class AnimatorFromSprite {
     private Character character;
 
@@ -21,8 +19,7 @@ public class AnimatorFromSprite {
 
         Array<TextureRegion> frames = new Array<TextureRegion>();
         for(int i = from; i < to; i++) {
-//            frames.add(new TextureRegion(character.getTexture(), x * i * a, y * i * b, width, height));
-            frames.add(new TextureRegion(character.getTexture(), 0, 20 * i, width, height));
+            frames.add(new TextureRegion(character.getTexture(), x * i * a, y * i * b, width, height));
         }
         return frames;
     }

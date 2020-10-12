@@ -14,12 +14,10 @@ import java.util.ArrayList;
 
 public class Andy extends Character {
 
-
-
-
     public Andy(World world, GameScreen screen,  SuperAttack super1, SuperAttack super2, int inicialX, int inicialY, boolean facinRight){
         super(world, screen,  super1, super2, inicialX, inicialY, "PiskelStand");
 
+        this.name = "AndyBot";
         this.movementSpeed = 6;
         this.strenght = 65;
         this.life = 8000;
@@ -30,16 +28,16 @@ public class Andy extends Character {
         previousState = State.STANDING;
         stateTimer = 0;
 
+        characterStand = new TextureRegion(getTexture(), 0, 0, 20, 20);
+        setBounds(0, 0, 20 / ChowFightMain.PPM, 20 / ChowFightMain.PPM );
+        setRegion(characterStand);
+
         AnimatorFromSprite animator = new AnimatorFromSprite(this);
         Array<TextureRegion> frames = animator.animate(0, 20, 20, 20, false, 0, 2);
         characterRun = new Animation(0.15f, frames);
         frames.clear();
 
-        this.name = "AndyBot";
-
-        characterStand = new TextureRegion(getTexture(), 0, 0, 20, 20);
-        setBounds(0, 0, 20 / ChowFightMain.PPM, 20 / ChowFightMain.PPM );
-        setRegion(characterStand);
     }
+
 
 }

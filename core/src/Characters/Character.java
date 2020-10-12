@@ -22,21 +22,21 @@ public abstract class Character extends Sprite {
     protected Shield shield;
     protected String name;
     protected float stateTimer;
-
-    public enum State { UPPERCAT, JAB, STANDING, FORDWARD, BACKWARDS, RUNNING, JUMPING}
-    public State currentState;
-    public State previousState;
-
-    protected int xpos; // DETERMINAR COMO TIENE QUE SER LA POSICION
-    protected int ypos;
     protected boolean facingRight;
-
-//    private TextureRegion characterStand;
-    protected TextureRegion characterStand;
-    protected Animation characterRun;
 
     public World world;
     public Body b2body;
+
+    public enum State { UPPERCAT, JAB, STANDING, RUNNING, JUMPING, FALLING}
+    public State currentState;
+    public State previousState;
+
+    protected TextureRegion characterStand;
+    protected Animation characterRun;
+    protected Animation characterJump;
+    protected Animation characterJab;
+    protected Animation characterUpperCat;
+    protected Animation characterFalling;
 
     public Character(World world, GameScreen gameScreen, SuperAttack super1, SuperAttack super2, int inicialX, int inicialY, String atlasName){
         super(gameScreen.getAtlas().findRegion(atlasName));
@@ -59,6 +59,19 @@ public abstract class Character extends Sprite {
 
         fdef.shape = shape;
         b2body.createFixture(fdef);
+    }
+
+    public String getName(){
+        return this.name;
+    }
+
+    ///////////////////////MOVEMENT//////////////////
+    public boolean inRange(int xposEnemy, int yposEnemy){
+        if (1 + 1 == 2){
+            return true;
+        }
+        return false;
+        ///////REFACTOR////////////
     }
 
     public void update(float dt) {
@@ -109,49 +122,23 @@ public abstract class Character extends Sprite {
         else
             return State.STANDING;
     }
-
+    /////////////////////////////////////DAMAGE AND ATTACKS/////////////////////////////////////
     private double getActualDamage(){
         return this.life * this.strenght;
     }
+
+    public void hurt(double damage){
+        this.life -= shield.defend(damage);
+    }
+
     public void addSuperAttack(SuperAttack nuevoSuperAtaque){
         superAttacks.add(nuevoSuperAtaque);
     }
+
     public ArrayList<SuperAttack> getSuperAttacks(){
         return this.superAttacks;
     }
 
-
-    public String getName(){
-        return this.name;
-    }
-
-    ///////////////Position//////////////////////
-    public boolean inRange(int xposEnemy, int yposEnemy){
-        if (1 + 1 == 2){
-            return true;
-        }
-        return false;
-        ///////REFACTOR////////////
-    }
-    public void setPosition(int x, int y, boolean facingRight){
-        this.xpos = x;
-        this.facingRight = facingRight;
-        this.ypos = y;
-    }
-
-    public void invertDirection(){
-        this.facingRight = !facingRight;
-    }
-
-//    public int getX(){
-//        return this.xpos;
-//    }
-//
-//    public int getY(){
-//        return this.ypos;
-//    }
-
-    ///////////////////////////Ataques Normales ////////////////////////////////
     public void upperCat(Character enemy) {
         enemy.hurt(this.getActualDamage() * 0.0015);
     }
@@ -160,7 +147,6 @@ public abstract class Character extends Sprite {
         enemy.hurt(this.getActualDamage() * 0.0018);
     }
 
-    /////////////////////////Super Ataques////////////////////////////
     public void superUpperCat(Character enemy, SuperAttack superAttack){
         enemy.hurt(superAttack.use(this.getActualDamage() * 0.0015));
     }
@@ -186,11 +172,5 @@ public abstract class Character extends Sprite {
     public boolean itsAlive(){
         return this.life > 0;
     }
-
-    public void hurt(double damage){
-        this.life -= shield.defend(damage);
-    }
-
-
 
 }
