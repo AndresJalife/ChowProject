@@ -13,6 +13,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
@@ -43,6 +44,8 @@ public class GameScreen implements Screen {
     private Andy player1;
     private John player2;
 
+    private TextureAtlas atlas;
+
     public GameScreen(ChowFightMain game) {
         this.game = game;
 
@@ -50,7 +53,7 @@ public class GameScreen implements Screen {
         gamePort = new FitViewport(ChowFightMain.V_WIDTH / ChowFightMain.PPM, ChowFightMain.V_HEIGHT / ChowFightMain.PPM, gameCam);
         hud = new Hud(game.batch);
 
-        map = this.mapLoader("TryMap2/try2.tmx");
+        map = this.mapLoader("try2.tmx");
 
         renderer = new OrthogonalTiledMapRenderer(map, 1 / ChowFightMain.PPM);
         gameCam.position.set(gamePort.getWorldWidth() / 2, gamePort.getWorldHeight() / 2, 0);
@@ -58,11 +61,19 @@ public class GameScreen implements Screen {
         world = new World(new Vector2(0, -10 ), true);
         createBodies();
         b2dr = new Box2DDebugRenderer();
+//        atlas = new TextureAtlas("Textures/John/pomoPack.txt");
+//        atlas = new TextureAtlas("Mario_and_Enemies.pack");
+        atlas = new TextureAtlas("Textures/PiskelTry/PiskelTry.txt");
 
         //TODO: ask for two different characters. Here im just seetting by default one Andy and one John
-        player1 = new Andy(world, new SuperAttackBot(), new SuperAttackBot(), 60, 32);
-        player2 = new John(world, new SuperAttackBot(), new SuperAttackBot(), 80, 32);
+        player1 = new Andy(world, this,  new SuperAttackBot(), new SuperAttackBot(), 60, 32, true);
+//        player2 = new John(world, this,  new SuperAttackBot(), new SuperAttackBot(), 80, 32, false);
 
+
+    }
+
+    public TextureAtlas getAtlas(){
+        return atlas;
     }
 
     private TiledMap mapLoader(String mapfile){
@@ -72,8 +83,8 @@ public class GameScreen implements Screen {
 
     private void createBodies(){
         BodyCreator bcreator = new BodyCreator(map, world);
-        for (int i = 2; i < 4 ; i++){
-            world = bcreator.createBody(i);
+        for (int layer = 2; layer < 3 ; layer++){
+            world = bcreator.createBody(layer);
         }
     }
 
@@ -81,6 +92,8 @@ public class GameScreen implements Screen {
         handleInput(dt);
 
         world.step(1/60f, 6, 2);
+
+        player1.update(dt);
 
         gameCam.position.x = player1.b2body.getPosition().x;
 
@@ -114,6 +127,11 @@ public class GameScreen implements Screen {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         renderer.render();
+
+        game.batch.setProjectionMatrix(gameCam.combined);
+        game.batch.begin();
+        player1.draw(game.batch);
+        game.batch.end();
 
         b2dr.render(world, gameCam.combined);
 

@@ -22,7 +22,6 @@ public class BodyCreator {
         PolygonShape shape = new PolygonShape();
         FixtureDef fdef = new FixtureDef();
         Body body;
-
         for(MapObject objet : map.getLayers().get(layer).getObjects().getByType(RectangleMapObject.class)){
             Rectangle rect = ((RectangleMapObject) objet).getRectangle();
 
