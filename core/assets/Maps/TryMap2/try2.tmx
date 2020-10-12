@@ -4,7 +4,7 @@
  <tileset firstgid="769" source="Trymap.tsx"/>
  <layer id="1" name="Background" width="30" height="13">
   <data encoding="base64" compression="zlib">
-   eJzl08dOVVEAhtE9cQBn4Mz4ABbsmlgA+xvoEBtWRMGW2LuJFRQ0sYAFdGjFhr1gYldQExvYE0UFsTwBLKKJmHsZiHfmYGWf7JMv/2hntAthDGMZx3gy4txNIJOJTGIyU5jKNLKYTjYzmEkOucxiNnOYyzwOcojDHOFoK3fHKOM4JzjJKU5TzhnOco7zXOAil7jMFa5SwTW2J4Wwg53soohidrOHveyjhFL2c4BRjE5qe/+eD9TykU98po56vtDAV77xnR8J6PsnhzCAgQwilTTSGcwQhjKM4YxgZPK/92tZx3o2sJFN5JHPZrZQQCFb2ZaA/jFPeMoznlNNDS94ySte84a3vEtAn9X+TylRCN3oTg960ove9KEv/aLffSffnelC1yi2b+zoXXWINd+/BSyMfu4udi5hKctYzgpWsorVrGmx37JfFMX2zbvx+uvc4Oav3dvOO9zlHveppIoHPORRK/2tKLZv3o3Xt3U3Xv83u+nh/9IEPFfeRA==
+   eJyzZmBgsB7Fo3gUj+JRPIqhGACmglnj
   </data>
  </layer>
  <layer id="4" name="graphics" width="30" height="13">

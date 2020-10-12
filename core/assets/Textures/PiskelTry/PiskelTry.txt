@@ -1,12 +1,19 @@
 PiskelTry.png
-size: 32, 32
+size: 20, 60
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
-PiskelTry
+PiskelRun
   rotate: false
   xy: 0, 0
-  size: 32, 32
-  orig: 32, 32
+  size: 20, 40
+  orig: 20, 40
+  offset: 0, 0
+  index: -1
+PiskelStand
+  rotate: false
+  xy: 0, 40
+  size: 20, 20
+  orig: 20, 20
   offset: 0, 0
   index: -1
